@@ -1,5 +1,5 @@
 {
-  "name": "sdk-library",
+  "name": "aunoa-metaverse-lib",
   "version": "1.0.0",
   "description": "Dcl SDK Library",
   "main": "./dist/index.js",
@@ -20,7 +20,7 @@
     "sdk",
     "library"
   ],
-  "author": "-",
+  "author": "Adrián Gosálvez",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
