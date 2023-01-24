@@ -1,7 +1,7 @@
 {
   "name": "aunoa-metaverse-lib",
   "version": "1.0.0",
-  "description": "Dcl SDK Library",
+  "description": "Connect Dcl Metaverse with RabbitMQ",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
@@ -24,7 +24,7 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/$dcl-author/$dcl-library-name"
+    "url": "git+https://github.com/agosalvez/metaverse-lib"
   },
   "files": [
     "dist",
