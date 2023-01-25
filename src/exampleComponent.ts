@@ -1,5 +1,6 @@
 
-import client, {Channel, Connection} from 'amqplib'
+import * as amqp from 'amqplib'
+import { Channel, Connection } from 'amqplib'
 
 
 /**
@@ -10,21 +11,28 @@ import client, {Channel, Connection} from 'amqplib'
 export class ExampleComponent {
   private connection: Promise<Connection>
   private channel: Channel
-  private queue: string
+  private URI: string
 
-  constructor(public host: string, public user: string, public pass: string, public port: number) {
-    const cadConn = 'amqp://' + user+':' + pass + '@' + host + ':' + port.toString()
-    console.info(cadConn)
-    this.connection = client.connect(cadConn)
-    this.createChannel()
+  constructor(public host: string, public user: string, public pass: string, public port: number, public queue: string) {
+    this.URI = 'amqp://' + user+':' + pass + '@' + host + ':' + port.toString()
+    console.info(this.URI)
+    this.initialize(queue)
   }
 
-  private async createChannel() {
-    this.channel = await (await this.connection).createChannel()
+  initialize(queue: string) {
+    return amqp.connect(this.URI)
+              .then(conn => conn.createChannel())
+              .then(channel => {
+                this.channel = channel
+                return this.channel.assertQueue(this.queue)
+              })
+              .then(q => this.queue = q.queue)
+              .catch(err => console.error(err.stack))
   }
 
-  public async sendMsg(queue: string, msg: string) {
-    this.queue = queue
+
+
+  public async sendMsg(msg: string) {
     this.channel.sendToQueue(this.queue, Buffer.from(msg))
   }
 
