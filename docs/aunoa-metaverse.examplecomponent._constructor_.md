@@ -9,12 +9,15 @@ Constructs a new instance of the `ExampleComponent` class
 <b>Signature:</b>
 
 ```typescript
-constructor(testing: boolean);
+constructor(host: string, user: string, pass: string, port: number);
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  testing | boolean |  |
+|  host | string |  |
+|  user | string |  |
+|  pass | string |  |
+|  port | number |  |
 
