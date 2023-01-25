@@ -8,5 +8,5 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [sdk-library](./sdk-library.md) |  |
+|  [aunoa-metaverse](./aunoa-metaverse.md) |  |
 
