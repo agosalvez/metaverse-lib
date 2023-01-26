@@ -7,8 +7,8 @@ export {
 }
 
 export * from './customSystem'
-/*
-import * as WebSocket from "ws";
+
+//import * as WebSocket from "ws";
 const wss = new WebSocket('wss://webchatbot.staging.aunoa.ai');
 const msg = {
   "channel": "WEBCHATBOT",
@@ -35,8 +35,8 @@ const msg = {
 }
 
 wss.on("connection", (clientWs, request) => {
-  console.log("🚀 ~ file: index.ts:38 ~ wss.on ~ request", request)
-  console.log("🚀 ~ file: index.ts:38 ~ wss.on ~ clientWs", clientWs)
+  log("🚀 ~ file: index.ts:38 ~ wss.on ~ request", request)
+  log("🚀 ~ file: index.ts:38 ~ wss.on ~ clientWs", clientWs)
   log("conectado al ws!")
   /*
   const ws = clientWs;
