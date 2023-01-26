@@ -9,7 +9,7 @@ export {
 export * from './customSystem'
 
 //import * as WebSocket from "ws";
-const wss = new WebSocket('wss://webchatbot.staging.aunoa.ai');
+const wss = new WebSocket('wss://wswebchatbot.staging.aunoa.ai/167-fe0988da-ceee-11e9-988b-42010a840081/c1fbcb2a-9055-404d-b859-9ae6b0d4a62c');
 
 const msg = {
   "channel": "WEBCHATBOT",
@@ -36,6 +36,7 @@ const msg = {
 }
 wss.onopen = function(event) {
   log(event)
+  log("conexión WS abierta")
   wss.send(JSON.stringify(msg))
   log("datos enviados")
 }
@@ -59,18 +60,3 @@ wss.onclose = function(event) {
 wss.onerror = function(error) {
   log(error);
 };
-
-/*
-wss.on("connection", (clientWs, request) => {
-  log("🚀 ~ file: index.ts:38 ~ wss.on ~ request", request)
-  log("🚀 ~ file: index.ts:38 ~ wss.on ~ clientWs", clientWs)
-  log("conectado al ws!")
-  /*
-  const ws = clientWs;
-  ws.on("message", function incoming(data) {
-    log("🚀 ~ file: index.ts:50 ~ incoming ~ data", data)
-  });
-  */
- /*
-});
-*/
