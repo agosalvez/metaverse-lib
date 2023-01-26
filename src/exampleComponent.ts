@@ -22,5 +22,5 @@ export const constant = 'constant'
  * This is a public function that does something
  */
 export function someFn() {
-  return 'some-value'
+  return 'some-value-modified'
 }

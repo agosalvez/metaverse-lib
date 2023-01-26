@@ -9,5 +9,4 @@
 |  Package | Description |
 |  --- | --- |
 |  [aunoa-metaverse](./aunoa-metaverse.md) |  |
-|  [sdk-library](./sdk-library.md) |  |
 
