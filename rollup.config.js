@@ -4,6 +4,7 @@ import typescript from '@rollup/plugin-typescript';
 import { apiExtractor } from "rollup-plugin-api-extractor";
 import { terser } from 'rollup-plugin-terser';
 import packageJson from './package.json'
+import { json } from 'stream/consumers';
 
 const PROD = !!process.env.CI
 
@@ -49,6 +50,7 @@ export default {
       },
       local: !PROD,
       cleanUpRollup: false
-    })
+    }),
+    json()
   ],
 };
