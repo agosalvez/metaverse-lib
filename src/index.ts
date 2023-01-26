@@ -37,6 +37,7 @@ const msg = {
 wss.onopen = function(event) {
   log(event)
   wss.send(JSON.stringify(msg))
+  log("datos enviados")
 }
 
 wss.onmessage = function(event) {
@@ -45,6 +46,7 @@ wss.onmessage = function(event) {
 }
 
 wss.onclose = function(event) {
+  log(event)
   if (event.wasClean) {
     log(`[close] Conexión cerrada limpiamente, código=${event.code} motivo=${event.reason}`);
   } else {
@@ -55,7 +57,7 @@ wss.onclose = function(event) {
 };
 
 wss.onerror = function(error) {
-  log(`[error]`);
+  log(error);
 };
 
 /*
