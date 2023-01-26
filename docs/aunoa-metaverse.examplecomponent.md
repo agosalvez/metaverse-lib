@@ -14,20 +14,11 @@ export declare class ExampleComponent
 
 |  Constructor | Modifiers | Description |
 |  --- | --- | --- |
-|  [(constructor)(host, user, pass, port)](./aunoa-metaverse.examplecomponent._constructor_.md) |  | Constructs a new instance of the <code>ExampleComponent</code> class |
+|  [(constructor)(testing)](./aunoa-metaverse.examplecomponent._constructor_.md) |  | Constructs a new instance of the <code>ExampleComponent</code> class |
 
 ## Properties
 
 |  Property | Modifiers | Type | Description |
 |  --- | --- | --- | --- |
-|  [host](./aunoa-metaverse.examplecomponent.host.md) |  | string |  |
-|  [pass](./aunoa-metaverse.examplecomponent.pass.md) |  | string |  |
-|  [port](./aunoa-metaverse.examplecomponent.port.md) |  | number |  |
-|  [user](./aunoa-metaverse.examplecomponent.user.md) |  | string |  |
-
-## Methods
-
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [sendMsg(queue, msg)](./aunoa-metaverse.examplecomponent.sendmsg.md) |  |  |
+|  [testing](./aunoa-metaverse.examplecomponent.testing.md) |  | boolean |  |
 

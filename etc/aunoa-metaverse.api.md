@@ -5,24 +5,15 @@
 ```ts
 
 /// <reference types="dcl" />
-/// <reference types="env" />
 
 // @public (undocumented)
 export const constant = "constant";
 
 // @public (undocumented)
 export class ExampleComponent {
-    constructor(host: string, user: string, pass: string, port: number);
+    constructor(testing: boolean);
     // (undocumented)
-    host: string;
-    // (undocumented)
-    pass: string;
-    // (undocumented)
-    port: number;
-    // (undocumented)
-    sendMsg(queue: string, msg: string): Promise<void>;
-    // (undocumented)
-    user: string;
+    testing: boolean;
 }
 
 // @public (undocumented)
