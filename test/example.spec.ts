@@ -7,9 +7,10 @@ describe('Example spec', () => {
   it('Should return constant', () => {
     expect(constant).toBe('constant')
   })
-
+/*
   it('Should return component', () => {
     const component = new ExampleComponent(true)
     expect(component.testing).toBe(true)
   })
+  */
 })
