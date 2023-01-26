@@ -10,6 +10,7 @@ export * from './customSystem'
 
 //import * as WebSocket from "ws";
 const wss = new WebSocket('wss://webchatbot.staging.aunoa.ai');
+
 const msg = {
   "channel": "WEBCHATBOT",
   "recipient": "193-d36c2f34-85aa-11ec-a00d-42010a840061",
@@ -33,7 +34,31 @@ const msg = {
   "payload": "",
   "timestamp": 1674747860.277
 }
+wss.onopen = function(event) {
+  log(event)
+  wss.send(JSON.stringify(msg))
+}
 
+wss.onmessage = function(event) {
+  log("datos recibidos!")
+  log(event)
+}
+
+wss.onclose = function(event) {
+  if (event.wasClean) {
+    log(`[close] Conexión cerrada limpiamente, código=${event.code} motivo=${event.reason}`);
+  } else {
+    // ej. El proceso del servidor se detuvo o la red está caída
+    // event.code es usualmente 1006 en este caso
+    log('[close] La conexión se cayó');
+  }
+};
+
+wss.onerror = function(error) {
+  log(`[error]`);
+};
+
+/*
 wss.on("connection", (clientWs, request) => {
   log("🚀 ~ file: index.ts:38 ~ wss.on ~ request", request)
   log("🚀 ~ file: index.ts:38 ~ wss.on ~ clientWs", clientWs)
