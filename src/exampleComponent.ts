@@ -14,11 +14,10 @@ export class ExampleComponent {
   constructor(public host: string, public user: string, public pass: string, public port: number, public queue: string) {
     this.URI = 'amqp://' + user+':' + pass + '@' + host + ':' + port.toString()
     console.info(this.URI)
-    //this.initialize(queue)
+    this.queue = queue
   }
 
-  initialize(queue: string) {
-    /*
+  async initialize() {
     return amqp.connect(this.URI)
               .then(conn => conn.createChannel())
               .then(channel => {
@@ -27,7 +26,6 @@ export class ExampleComponent {
               })
               .then(q => this.queue = q.queue)
               .catch(err => console.error(err.stack))
-              */
   }
 
   public async sendMsg(msg: string) {
