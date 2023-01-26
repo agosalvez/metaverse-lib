@@ -7,7 +7,7 @@ export {
 }
 
 export * from './customSystem'
-
+/*
 import * as WebSocket from "ws";
 const wss = new WebSocket('wss://webchatbot.staging.aunoa.ai');
 const msg = {
@@ -45,3 +45,4 @@ wss.on("connection", (clientWs, request) => {
   });
   */
 });
+*/
